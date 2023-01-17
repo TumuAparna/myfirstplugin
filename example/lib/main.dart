@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:myfirstplugin/myfirstplugin.dart';
@@ -23,8 +22,7 @@ class _MyAppState extends State<MyApp> {
 
   getUUID() async {
     try {
-      response = await Myfirstplugin.getCustomData('uuid') ??
-          'Unknown platform version';
+      response = await Myfirstplugin.getCustomData('uuid');
     } on PlatformException {
       response = 'Failed to get uuid.';
     }
@@ -32,8 +30,7 @@ class _MyAppState extends State<MyApp> {
 
   getVersion() async {
     try {
-      response = await Myfirstplugin.getCustomData('buildVersion') ??
-          'Unknown platform version';
+      response = await Myfirstplugin.getCustomData('buildVersion');
     } on PlatformException {
       response = 'Failed to get platform version.';
     }
